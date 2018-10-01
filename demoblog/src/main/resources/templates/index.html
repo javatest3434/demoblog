@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Welcome</h1>
+<h2 th:utext="${message}">..!..</h2>
+
+
+
+<a th:href="@{newpost}">New Post</a>
+<table border="1">
+<tr th:each ="BlogModel : ${blog}">
+    <th  th:utext="${BlogModel.Id}">...</th>
+    <th width="100" height="100" th:utext="${BlogModel.text}">...</th>
+<td><a  th:href="@{/edit}">Edit Post</a></td>
+</tr>
+</table>
+</body>
+
+</html>
